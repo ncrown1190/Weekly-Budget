@@ -5,16 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
     <title>GROUP Of 4 Project</title>
-  </head>
-  <body>
     <header>
-      <h1>Weekly Budget App</h1>
-      <h2></h2>
+      <div class="header-logo">
+        <img src="assets/img/pennyPinchLogo.png" alt="teaspoon logo" />
+        <h1>PENNY PINCH</h1>
+      </div>
     </header>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <main>
+      <section>
+        <h2 class="weekly-budget">Budget Amount</h2>
+      </section>
+      <section>
+        <form>
+          <input type="number" id="budget-input" placeholder="Weekly Budget" />
+        </form>
+        <button id="budget-Update-btn">Update Budget</button>
+      </section>
+      <section class="category-selection">
+        <ul>
+          <li class="category-list">
+            <a href="#" class="activity-btn cat-btn">Activities</a>
+            <img src="assets/ENTERTAINMENT.jpg" alt="Activities Icon" />
+            <input
+              type="number"
+              id=""
+              class="expence-input"
+              placeholder="$0.00"
+            />
+          </li>
+          <li class="category-list">
+            <a href="#" class="food-btn cat-btn">Food</a>
+            <img src="assets/food.jpg" alt="Food Icon" />
+            <input
+              type="number"
+              id=""
+              class="expence-input"
+              placeholder="$0.00"
+            />
+          </li>
+          <li class="category-list">
+            <a href="#" class="clothing-btn cat-btn">Clothing</a>
+            <img src="assets/CLOTHING.jpg" alt="Clothes Icon" />
+            <input
+              type="number"
+              id=""
+              class="expence-input"
+              placeholder="$0.00"
+            />
+          </li>
+          <li class="category-list">
+            <a href="#" class="bills-btn cat-btn">Bills</a>
+            <img src="assets/BILLS.jpg" alt="bill Icon" />
+            <input
+              type="number"
+              id=""
+              class="expence-input"
+              placeholder="$0.00"
+            />
+          </li>
+          <li class="category-list">
+            <a href="#" class="others-btn cat-btn">Others</a>
+            <img src="assets/OTHER.webp" alt="Others Icon" />
+            <input
+              type="number"
+              id=""
+              class="expence-input"
+              placeholder="$0.00"
+            />
+          </li>
+        </ul>
+      </section>
+    </div>
+    <section class="items-container">
+      <div class="cart-contents-container">
+        <div class="cart-items-div"></div>
+    </section>
+      <section class="btn">
+        <button class="cancel-btn btn">Reset</button>
+      </section>
+      
+      <section class="items-container hide"></section>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
