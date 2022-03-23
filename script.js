@@ -1,81 +1,128 @@
-// console.log("hi");
-
-const categorySelection = document.querySelector(".category-selection");
+//
+let form = document.querySelector("#form");
 let budgetUpdate = document.querySelector("#budget-Update-btn");
 let weeklyBudget = document.querySelector(".weekly-budget");
 let budgetInput = document.querySelector("#budget-input");
-let reset = document.querySelector(".btn");
-let catogoryBtn = document.querySelector(".cat-btn");
-let activityBtn = document.querySelector(".activity-btn");
-let foodBtn = document.querySelector(".food-btn");
+let weekInpt = document.querySelector(".weekInput");
 let itemsContainer = document.querySelector(".items-container");
-let categoryList = document.querySelectorAll(".category-list");
+let remainingBalance = document.querySelector(".remaing-balance");
+let totalExpenses = document.querySelector("#total-expenses");
+let reset = document.querySelector(".btn");
 
 let weeklyInput = 0;
 let balance = 0;
 let totalExpense = 0;
+let expenses = [];
 
-budgetUpdate.addEventListener("click", (e) => {
+form.addEventListener("click", (e) => {
   e.preventDefault();
   console.log(e.target);
   weeklyInput = budgetInput.value;
 
   weeklyBudget.textContent = `Budget Amount: ${weeklyInput}`;
+  weekInpt.reset();
   updateBalance();
 });
-//console.log(budgetInput.value);
+
+document.querySelector("#event-List").addEventListener("click", (e) => {
+  if (e.target.localName === "a") {
+    e.preventDefault();
+    //document.querySelector("#pid").style.display = "none";
+
+    checkout(e);
+  }
+});
+
+const checkout = (event) => {
+  let newDiv = document.createElement("div");
+  const divImg = document.createElement("img");
+  const newTypeInput = document.createElement("input");
+  const newTypeText = document.createElement("input");
+  newDiv.setAttribute("class", "view2");
+  newTypeText.setAttribute("type", "text");
+  newTypeText.setAttribute("class", "name-input");
+  newTypeText.setAttribute("placeholder", "item-name");
+
+  newTypeInput.setAttribute("type", "number");
+  newTypeInput.setAttribute("class", "amount-input");
+  newTypeInput.setAttribute("min", "0");
+  newTypeInput.setAttribute("value", "0");
+
+  console.log(event.target.innerText);
+  if (event.target.innerText === "Activities") {
+    divImg.setAttribute("src", "assets/img/entertainment1.png");
+
+    //document.querySelector(".activity-btn").classList.toggle("cat-btn");
+  } else if (event.target.innerText === "Food") {
+    divImg.setAttribute("src", "assets/img/food1.png");
+  } else if (event.target.innerText === "Clothing") {
+    divImg.setAttribute("src", "assets/img/clothing4.png");
+  } else if (event.target.innerText === "Bills") {
+    divImg.setAttribute("src", "assets/img/bill1.png");
+  } else {
+    divImg.setAttribute("src", "assets/img/prr.png");
+  }
+  newDiv.append(divImg);
+  newDiv.append(newTypeText);
+  newDiv.append(newTypeInput);
+  itemsContainer.append(newDiv);
+  console.log(event.target);
+};
+budgetUpdate.addEventListener("click", (e) => {
+  e.preventDefault();
+  nameInput = document.querySelector(".name-input");
+  amountInput = document.querySelector(".amount-input");
+  console.log({ nameInput });
+  let expense = {
+    name: nameInput.value,
+    amount: amountInput.value,
+  };
+  let newExpense = document.createElement("p");
+  newExpense.setAttribute("class", "listItems");
+  newExpense.textContent = `${expense.name}: $${expense.amount}`;
+  itemsContainer.append(newExpense);
+  let expenseAmount = parseInt(expense.amount);
+  expenses.push(expenseAmount);
+  updateExpenseTotal();
+
+  // addExpenses();
+});
 const updateBalance = () => {
   balance = weeklyInput - totalExpense;
   console.log(balance);
+  remainingBalance.innerText = "$" + balance;
+  if (balance < 0) {
+    remainingBalance.classList.remove("green");
+    remainingBalance.classList.add("red");
+    document.querySelector(".alert").style.display = "block";
+    document.querySelector(".alert").style.color = "red";
+    document.querySelector(".alert").style.marginTop = "20px";
+    document.querySelector(".alert").style.marginLeft = "60px";
+    document.querySelector(".alert").style.fontSize = "28px";
+
+    document.querySelector(".alert").textContent = `Alert:  Insufficient Funds`;
+    // document.querySelector("#pid").style.display = "none";
+  } else {
+    remainingBalance.classList.remove("red");
+    remainingBalance.classList.add("green");
+  }
 };
-
-activityBtn.addEventListener("click", (e) => {
-  console.log("clicked");
-  e.preventDefault();
-  //document.querySelector("#pid").style.display = "none";
-  activityCheckout();
-  //console.log(itemsContainer.classList);
-});
-foodBtn.addEventListener("click", (e) => {
-  console.log("clicked");
-  e.preventDefault();
-  //document.querySelector("#pid").style.display = "none";
-  foodCheckout();
-  //console.log(itemsContainer.classList);
-});
-
-const activityCheckout = () => {
-  let newActivityDiv = document.createElement("div");
-  const divImg = document.createElement("img");
-  const newTypeInput = document.createElement("input");
-  const newTypeLabel = document.createElement("label");
-  divImg.setAttribute("src", "assets/img/activity1.png");
-  newTypeLabel.setAttribute("id", "activityInputType");
-  newTypeLabel.textContent = "Type";
-  newTypeInput.setAttribute("type", "number");
-  newActivityDiv.append(newTypeLabel);
-  newActivityDiv.append(newTypeInput);
-  itemsContainer.append(newActivityDiv);
-  // console.log(catogoryList);
-  // if (categoryList.style.display === "none") {
-  //   categoryList.style.display = "block";
-  // }
+console.log(updateBalance());
+const updateExpenseTotal = () => {
+  totalExpense = 0;
+  for (let i = 0; i < expenses.length; i++) {
+    totalExpense += expenses[i];
+    //console.log(expenses);
+    document.querySelector(".act-Expense").innerText = "$" + totalExpense;
+  }
+  totalExpenses.textContent = `Total Expenses: $${totalExpense}`;
+  //console.log(totalExpense);
+  updateBalance();
 };
+updateExpenseTotal();
 
-const foodCheckout = () => {
-  let newFoodDiv = document.createElement("div");
-  const newTypeInput = document.createElement("input");
-  const newTypeLabel = document.createElement("label");
-  newTypeLabel.setAttribute("id", "foodInputType");
-  newTypeLabel.textContent = "Type";
-  newTypeInput.setAttribute("type", "number");
-  newFoodDiv.append(newTypeLabel);
-  newFoodDiv.append(newTypeInput);
-  itemsContainer.append(newFoodDiv);
-};
-
-console.log(categoryList);
 reset.addEventListener("click", (e) => {
+  e.preventDefault();
   if (e.target.classList.contains("cancel-btn")) {
     location.reload();
   }

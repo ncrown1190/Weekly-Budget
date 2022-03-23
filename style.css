@@ -5,6 +5,7 @@ header h1,
 main ul {
   margin: 0px;
   padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
 /*GENERAL*/
 Body {
@@ -27,17 +28,13 @@ header {
   display: flex;
 }
 .header-logo img {
-  /* filter: invert(43%) sepia(2%) saturate(1361%) hue-rotate(9deg) brightness(90%)
-    contrast(81%); */
   width: 50px;
   height: 60px;
-  /* transform: rotate(-48deg); */
+  margin-right: 5px;
 }
 
 main {
   margin-top: 100px;
-  /* display: flex;
-  justify-content: center; */
 }
 h2 {
   color: #ffffff;
@@ -45,7 +42,7 @@ h2 {
   /* text-align: center; */
   border-bottom: #e5e5e5 2px solid;
   margin: 0;
-  padding: 10px;
+  padding: 15px;
   font-size: 18px;
   text-align: center;
 }
@@ -54,137 +51,227 @@ form {
   background-color: #bb86fc;
   text-align: center;
   font-size: 18px;
-  border: #e5e5e5 2px solid;
+  /* border: #e5e5e5 2px solid; */
   margin: 0;
-  padding: 5px 20px;
-  /* width: 100%;
-  margin: 0;
-  right: 0;
-  left: 0; */
+  padding: 5px;
 }
 #budget-input {
   background-color: #bb86fc;
   margin: 0;
   padding: 10px;
   border: none;
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
 }
-#budget-Update-btn {
-  background-color: #efd2ea;
-  color: black;
-  width: 100%;
-  border: none;
-  padding: 10px;
+.margin-class {
+  margin: 50px;
 }
-
-/* h3 {
-  color: #ffffff;
-  background-color: #bb86fc;
-  text-align: center;
-  border: #e5e5e5 2px solid;
-  margin: 0;
-} */
 .category-selection {
-  padding: 0 30px;
+  padding: 5px 10px;
+  width: 48%;
+  float: left;
+  flex: 4;
 }
 .category-selection ul {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  justify-content: space-around;
+  justify-content: space-between;
 }
-
 .category-list {
   list-style-type: none;
   width: 100%;
   height: 50px;
   margin-top: 5px;
+  flex: 1;
 }
 li {
   display: flex;
   align-items: baseline;
-  border-bottom: 3px solid #3700b3;
-  /* display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start; */
-  flex: 1;
+  border-bottom: 1px solid #3700b3;
+  /* flex: 1; */
 }
 .category-list a {
   background-color: white;
   /* border: #e5e5e5 solid 2px; */
-  width: 50%;
-  height: 75%;
+  /* width: 50%;
+  height: 75%; */
   color: #6a6861;
-  font-size: 28px;
+  font-size: 18px;
   text-decoration: none;
   display: flex;
   /* justify-content: center;
-  align-items: center; */
-  flex: 1;
+    align-items: center; */
+  flex: 2;
 }
-.category-list .highlighted-cat {
-  border: 3px solid #70946f;
-  color: #70946f;
-  font-weight: bold;
-  background-color: #ebf4e5;
-}
-.category-list img {
-  /* padding: 20px; */
+/* .category-list .highlighted-cat {
+    border: 3px solid #70946f;
+    color: #70946f;
+    font-weight: bold;
+    background-color: #ebf4e5;
+  } */
+.category-list div {
+  padding: 5px;
   width: 50px;
-  height: 100px;
+  height: 25px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
+  filter: hue-rotate(546deg);
   flex: 1;
 }
-
+.img-div {
+  width: 50%;
+  height: 50%;
+  align-items: center;
+}
+.img-div1 {
+  width: 50%;
+  height: 50%;
+  background-image: url("assets/img/entertainment1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: center;
+}
+.img-div2 {
+  background-image: url("assets/img/food1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: center;
+}
+.img-div3 {
+  background-image: url("assets/img/clothing4.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: baseline;
+}
+.img-div4 {
+  background-image: url("assets/img/bill1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: center;
+}
+.img-div5 {
+  background-image: url("assets/img/prr.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: center;
+}
 .expence-input {
-  margin: 0;
-  padding: 10px;
-  border: none;
-  font-size: 18px;
-  text-align: left;
   flex: 1;
 }
-
-.btn {
+.list-itmes {
   display: flex;
-  flex-direction: row;
+  position: relative;
+  flex-direction: column;
+  flex: 2;
+}
+.list-container {
+  display: flex;
+}
+.view2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.view2 img {
+  padding: 6px;
+  width: 15%;
+  height: 15%;
+}
+.view2 input {
+  padding: 2px;
+  margin: 6px;
+  width: 80%;
+}
+.middle-section {
+  padding: 5px 10px;
+  width: 10%;
+  float: middle;
+  flex: 1;
+}
+.end-section {
+  padding: 5px 10px;
+  width: 40%;
+  float: right;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
-  padding: 10px 40px;
-  border-radius: 10px;
-  /* width: 35%;
-  height: 35px;
-  padding: 0;
-  border: 0;
-  font-family: "Yrsa", serif;
-  font-size: 18px;
-  border: none;
-  margin: 2px; */
+  flex: 4;
+}
+.items-container {
+  width: 80%;
+}
+.items-container p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #efd2ea;
+  margin: 0;
+}
+p.remaining-balance {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.budget-Update-btn {
+  padding: 5px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 80px;
 }
 .cancel-btn {
   background-color: #6200ee;
   color: white;
+  padding: 5px 30px;
+  margin: 5px;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 40px;
+  left: 40%;
+  align-items: center;
+}
+.cat-btn {
+  display: none;
 }
 .hide {
-  display: none !important;
+  display: none;
 }
-.btn:hover {
-  color: #6200ee;
-  background-color: #ffffff;
-}
-/* .items-container {
-  display: inline-block;
+footer {
+  margin: 0;
   position: fixed;
-  top: 0px;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 5;
-} */
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0px;
+  /* border-bottom: #e5e5e5 2px solid; */
+  color: #ffffff;
+  background-color: #3700b3;
+  align-items: center;
+  /* z-index: 1; */
+}
+h6 {
+  margin: 0;
+  padding: 3px;
+}
+footer p {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.red {
+  color: orangered;
+  font-weight: bolder;
+}
+
+.green {
+  color: rgb(97, 197, 80);
+  font-weight: bolder;
+}
