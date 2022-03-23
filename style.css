@@ -13,7 +13,6 @@ Body {
 
 /* SPECIFICS */
 header {
-  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -35,47 +34,68 @@ header {
 }
 
 main {
-  margin-top: 100px;
-  /* display: flex;
-  justify-content: center; */
+  margin-top: 0px;
 }
+
+h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50%;
+  font-family: abril fatFace, Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  margin-left: 20px;
+  letter-spacing: 3px;
+}
+
 h2 {
+  font-family: abril fatFace;
   color: #ffffff;
   background-color: #791bff;
-  /* text-align: center; */
-  border-bottom: #e5e5e5 2px solid;
-  margin: 0;
+  letter-spacing: 1px;
+  margin: 0 auto;
   padding: 10px;
   font-size: 18px;
   text-align: center;
 }
+
+#main-logo {
+  display: flex;
+  flex-direction: row;
+  margin-right: 25px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: -20px;
+}
+
 form {
   /* color: #ffffff; */
   background-color: #bb86fc;
   text-align: center;
   font-size: 18px;
   border: #e5e5e5 2px solid;
-  margin: 0;
-  padding: 5px 20px;
-  /* width: 100%;
-  margin: 0;
-  right: 0;
-  left: 0; */
+  padding: 5px;
 }
 #budget-input {
   background-color: #bb86fc;
+  font-family: abril fatFace;
+  letter-spacing: 1px;
   margin: 0;
-  padding: 10px;
-  border: none;
+  padding: 8px;
+  width: 35%;
   font-size: 18px;
   text-align: center;
 }
 #budget-Update-btn {
   background-color: #efd2ea;
+  font-family: abril fatFace;
+  letter-spacing: 1px;
+  font-size: 18px;
   color: black;
   width: 100%;
   border: none;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 /* h3 {
@@ -91,64 +111,65 @@ form {
 .category-selection ul {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  justify-content: space-around;
+  align-items: center;
 }
 
 .category-list {
+  display: flex;
   list-style-type: none;
   width: 100%;
   height: 50px;
   margin-top: 5px;
+  margin-left: 50%;
+  margin-right: 50%;
 }
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-family: abril fatFace;
+  letter-spacing: 1px;
+}
+
 li {
   display: flex;
-  align-items: baseline;
   border-bottom: 3px solid #3700b3;
   /* display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start; */
-  flex: 1;
 }
+
 .category-list a {
-  background-color: white;
-  /* border: #e5e5e5 solid 2px; */
-  width: 50%;
-  height: 75%;
-  color: #6a6861;
-  font-size: 28px;
-  text-decoration: none;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
-  flex: 1;
+  flex-direction: column;
+  background-color: white;
+  color: #6a6861;
+  font-size: 24px;
+  text-decoration: none;
+  align-items: center;
+  margin: 0 auto;
 }
+
 .category-list .highlighted-cat {
   border: 3px solid #70946f;
   color: #70946f;
   font-weight: bold;
   background-color: #ebf4e5;
 }
-.category-list img {
-  /* padding: 20px; */
-  width: 50px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex: 1;
-}
 
-.expence-input {
-  margin: 0;
-  padding: 10px;
-  border: none;
+.expense-sum {
+  display: flex;
+  align-items: center;
   font-size: 18px;
-  text-align: left;
-  flex: 1;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  border-style: none;
+  font-family: abril fatFace;
 }
 
 .btn {
@@ -158,20 +179,128 @@ li {
   align-items: center;
   font-size: 18px;
   padding: 10px 40px;
-  border-radius: 10px;
-  /* width: 35%;
-  height: 35px;
-  padding: 0;
-  border: 0;
-  font-family: "Yrsa", serif;
-  font-size: 18px;
-  border: none;
-  margin: 2px; */
 }
+
+.activity-btn {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  height: 30px;
+  padding: 10px;
+  width: 100px;
+}
+
+#activity-pic {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-left: 25%;
+  padding-right: 25%;
+  justify-content: center;
+}
+
+.food-btn {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  height: 10px;
+  width: 100px;
+  padding: 30px;
+}
+
+#food-pic {
+  display: flex;
+  margin: 0 auto;
+  width: 125px;
+  height: 125px;
+  justify-content: center;
+  padding: 20px;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#food-input {
+  display: flex;
+  margin-left: -15px;
+}
+
+.clothing-btn {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  height: 10px;
+  width: 100px;
+  padding: 3%;
+}
+
+#clothes-input {
+  display: flex;
+  flex-direction: row;
+}
+
+#fits-pic {
+  display: flex;
+  justify-content: center;
+  height: 175px;
+  width: 175px;
+  margin: 0 auto;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.bills-btn {
+  display: flex;
+  margin: 0 auto;
+  padding: 25px;
+  justify-content: center;
+  height: 10px;
+  width: 100px;
+  padding: 35px;
+}
+
+#costs-pic {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.other-btn {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  height: 10px;
+  width: 100px;
+  padding: 25px;
+}
+
+#misc-pic {
+  display: flex;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100px;
+  width: 100px;
+  padding-left: 100px;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
 .cancel-btn {
   background-color: #6200ee;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .hide {
   display: none !important;
 }
@@ -188,3 +317,63 @@ li {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 5;
 } */
+
+#bowling {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: white;
+}
+
+#foods {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: white;
+}
+
+#fits {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: white;
+}
+
+#costs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: white;
+}
+
+#misc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 50%;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: white;
+}

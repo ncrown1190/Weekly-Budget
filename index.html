@@ -7,79 +7,89 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <title>GROUP Of 4 Project</title>
     <header>
       <div class="header-logo">
-        <img src="assets/img/pennyPinchLogo.png" alt="teaspoon logo" />
-        <h1>PENNY PINCH</h1>
+        <img id="main-logo" src="assets/PENNYPINCHLOGO.png" alt="Penny Pinch" />
+        <h1>Penny Pinch</h1>
       </div>
     </header>
     <main>
       <section>
-        <h2 class="weekly-budget">Budget Amount</h2>
+        <h2 class="weekly-budget">Budget Amount:</h2>
       </section>
       <section>
         <form>
-          <input type="number" id="budget-input" placeholder="Weekly Budget" />
+          <input class="budget-header" type="number" id="budget-input" placeholder="Weekly Budget"/>
         </form>
         <button id="budget-Update-btn">Update Budget</button>
       </section>
       <section class="category-selection">
         <ul>
+          <div id="bowling"
           <li class="category-list">
-            <a href="#" class="activity-btn cat-btn">Activities</a>
-            <img src="assets/ENTERTAINMENT.jpg" alt="Activities Icon" />
+            <a href="#" class="activity-btn">Activities</a>
+            <img id="activity-pic" src="assets/ENTERTAINMENT.jpg" alt="Activities Icon" />
             <input
               type="number"
               id=""
-              class="expence-input"
+              class="expense-sum"
               placeholder="$0.00"
-            />
+          </input>
           </li>
+        </div>
+        <div id="foods"
           <li class="category-list">
-            <a href="#" class="food-btn cat-btn">Food</a>
-            <img src="assets/food.jpg" alt="Food Icon" />
+            <a href="#" class="food-btn">Food</a>
+            <img id="food-pic" src="assets/food asset 2.webp" alt="Food Icon" />
+            <input
+              type="number"
+              id="food-input"
+              class="expense-sum"
+              placeholder="$0.00"
+          </input>
+          </li>
+        </div>
+        <div id="fits"
+          <li class="category-list">
+            <a href="#" class="clothing-btn">Clothing</a>
+            <img id="fits-pic" src="assets/CLOTHING.jpg" alt="Clothes Icon"/>
+            <input
+              type="number"
+              id="clothes-input"
+              class="expense-sum"
+              placeholder="$0.00"
+          </input>
+            </li>
+          </li>
+        </div>
+      <div id="costs"
+          <li class="category-list">
+            <a href="#" class="bills-btn">Bills</a>
+            <img id="costs-pic" src="assets/BILLS.jpg" alt="bill Icon" />
             <input
               type="number"
               id=""
-              class="expence-input"
+              class="expense-sum"
               placeholder="$0.00"
-            />
+          </input>
           </li>
+        </div>
+        <div id="misc"
           <li class="category-list">
-            <a href="#" class="clothing-btn cat-btn">Clothing</a>
-            <img src="assets/CLOTHING.jpg" alt="Clothes Icon" />
+            <a href="#" class="other-btn">Other</a>
+            <img id="misc-pic" src="assets/OTHER.webp" alt="Others Icon" />
             <input
               type="number"
               id=""
-              class="expence-input"
+              class="expense-sum"
               placeholder="$0.00"
-            />
+          </input>
           </li>
-          <li class="category-list">
-            <a href="#" class="bills-btn cat-btn">Bills</a>
-            <img src="assets/BILLS.jpg" alt="bill Icon" />
-            <input
-              type="number"
-              id=""
-              class="expence-input"
-              placeholder="$0.00"
-            />
-          </li>
-          <li class="category-list">
-            <a href="#" class="others-btn cat-btn">Others</a>
-            <img src="assets/OTHER.webp" alt="Others Icon" />
-            <input
-              type="number"
-              id=""
-              class="expence-input"
-              placeholder="$0.00"
-            />
-          </li>
+        </div>
         </ul>
       </section>
     </div>
