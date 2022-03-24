@@ -1,3 +1,11 @@
+/* REMOVE SPINNERS FROM NUMBER INPUT */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /*RESETS*/
 body,
 main,
@@ -286,7 +294,6 @@ footer p {
 }
 
 @media only screen and (min-width: 768px) {
-
   .cancel-btn {
     display: flex;
     justify-content: center;
@@ -297,11 +304,10 @@ footer p {
     border-radius: 5px;
     bottom: 40px;
     margin-left: 78px;
-
   }
 
   h6 {
-    display: flex; 
+    display: flex;
     justify-content: left;
   }
 
@@ -309,6 +315,4 @@ footer p {
     margin-left: 50px;
     width: 30%;
   }
-
-
 }
