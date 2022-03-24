@@ -14,7 +14,7 @@ let balance = 0;
 let totalExpense = 0;
 let expenses = [];
 
-form.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(e.target);
   weeklyInput = budgetInput.value;
@@ -24,11 +24,15 @@ form.addEventListener("click", (e) => {
   updateBalance();
 });
 
-document.querySelector("#event-List").addEventListener("click", (e) => {
-  if (e.target.localName === "a") {
-    e.preventDefault();
-    //document.querySelector("#pid").style.display = "none";
 
+document.querySelector("#event-List").addEventListener("click", (e) => {
+  //HIDE EVERYTHING 
+document.querySelectorAll(".view2").forEach(view2 => {
+  view2.classList.add("hidden");
+})
+  //SHOW ONE
+    if (e.target.localName === "a") {
+    e.preventDefault();
     checkout(e);
   }
 });
