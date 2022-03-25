@@ -13,6 +13,7 @@ header h1,
 main ul {
   margin: 0px;
   padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
 /*GENERAL*/
 Body {
@@ -22,7 +23,7 @@ Body {
 /* SPECIFICS */
 header {
   position: fixed;
-  font-family: abril fatface;
+  /* font-family: abril fatface; */
   font-size: 24px;
   top: 0;
   right: 0;

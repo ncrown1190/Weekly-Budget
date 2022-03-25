@@ -8,10 +8,17 @@ let itemsContainer = document.querySelector(".items-container");
 let remainingBalance = document.querySelector(".remaing-balance");
 let totalExpenses = document.querySelector("#total-expenses");
 let reset = document.querySelector(".btn");
+//let expenseColor = document.querySelector(".expence-input");
 
 let weeklyInput = 0;
 let balance = 0;
 let totalExpense = 0;
+let totalActivity = 0;
+let totalFood = 0;
+let totalClothing = 0;
+let totalBills = 0;
+let totalOthers = 0;
+
 let expenses = [];
 
 form.addEventListener("submit", (e) => {
@@ -88,11 +95,13 @@ budgetUpdate.addEventListener("click", (e) => {
       return ![...input.parentElement.classList].includes("hidden");
     }
   )[0];
+
   console.log({ nameInput });
   let expense = {
     name: nameInput.value,
     amount: amountInput.value,
   };
+
   let newExpense = document.createElement("p");
   newExpense.setAttribute("class", "listItems");
   newExpense.textContent = `${expense.name}: $${expense.amount}`;
@@ -112,7 +121,7 @@ const updateBalance = () => {
     remainingBalance.classList.add("red");
     document.querySelector(".alert").style.display = "block";
     document.querySelector(".alert").style.color = "red";
-    document.querySelector(".alert").style.marginTop = "20px";
+    document.querySelector(".alert").style.marginTop = "15px";
     document.querySelector(".alert").style.marginLeft = "60px";
     document.querySelector(".alert").style.fontSize = "28px";
 
@@ -129,7 +138,7 @@ const updateExpenseTotal = () => {
   for (let i = 0; i < expenses.length; i++) {
     totalExpense += expenses[i];
     //console.log(expenses);
-    document.querySelector(".act-Expense").innerText = "$" + totalExpense;
+    //document.querySelector(".act-Expense").innerText = "$" + totalExpense;
   }
   totalExpenses.textContent = `Total Expenses: $${totalExpense}`;
   //console.log(totalExpense);
@@ -142,4 +151,63 @@ reset.addEventListener("click", (e) => {
   if (e.target.classList.contains("cancel-btn")) {
     location.reload();
   }
+});
+
+//update the category total
+budgetUpdate.addEventListener("click", (e) => {
+  let visibleIcon = [...document.querySelectorAll(".view2 img")].filter(
+    function (img) {
+      return ![...img.parentElement.classList].includes("hidden");
+    }
+  )[0].src;
+  console.log(visibleIcon);
+  // get the price amount
+  let priceAmount = [...document.querySelectorAll(".amount-input")].filter(
+    function (input) {
+      return ![...input.parentElement.classList].includes("hidden");
+    }
+  )[0].value;
+  console.log({ priceAmount });
+  //find out icon which is displyed
+
+  //if this is food icon then
+  if (visibleIcon.includes("food")) {
+    //console.log("add to the food");
+    totalFood += Number(priceAmount);
+    document.querySelector(".food-Expense").innerText = `$${totalFood}`;
+  }
+  //then category total add to food
+  // if this is the activity icon
+  if (visibleIcon.includes("entertainment1")) {
+    totalActivity += Number(priceAmount);
+    // console.log(totalActivity);
+    document.querySelector(".act-Expense").innerText = `$${totalActivity}`;
+    //console.log("add to the activity");
+  }
+  //then category total add to activity
+  //if this is the other icon food
+
+  //if this is the other icon clothing
+  if (visibleIcon.includes("clothing")) {
+    //console.log("add to the clothing");
+    totalClothing += Number(priceAmount);
+    // console.log(totalActivity);
+
+    document.querySelector(".clothing-Expense").innerText = `$${totalClothing}`;
+  }
+  //if this is the other icon bill
+  if (visibleIcon.includes("bill1")) {
+    //console.log("add to the bills");
+    totalBills += Number(priceAmount);
+    // console.log(totalActivity);
+    document.querySelector(".bills-Expense").innerText = `$${totalBills}`;
+  }
+  //if this is the other icon other
+  if (visibleIcon.includes("prr")) {
+    //console.log("add to the others");
+    totalOthers += Number(priceAmount);
+    // console.log(totalActivity);
+    document.querySelector(".other-expense").innerText = `$${totalOthers}`;
+  }
+  console.log("update");
 });
