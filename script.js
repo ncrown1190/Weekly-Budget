@@ -24,14 +24,13 @@ form.addEventListener("submit", (e) => {
   updateBalance();
 });
 
-
 document.querySelector("#event-List").addEventListener("click", (e) => {
-  //HIDE EVERYTHING 
-document.querySelectorAll(".view2").forEach(view2 => {
-  view2.classList.add("hidden");
-})
+  //HIDE EVERYTHING
+  document.querySelectorAll(".view2").forEach((view2) => {
+    view2.classList.add("hidden");
+  });
   //SHOW ONE
-    if (e.target.localName === "a") {
+  if (e.target.localName === "a") {
     e.preventDefault();
     checkout(e);
   }
@@ -50,7 +49,7 @@ const checkout = (event) => {
   newTypeInput.setAttribute("type", "number");
   newTypeInput.setAttribute("class", "amount-input");
   newTypeInput.setAttribute("min", "0");
-  newTypeInput.setAttribute("value", "0");
+  newTypeInput.setAttribute("placeholder", "0");
 
   console.log(event.target.innerText);
   if (event.target.innerText === "Activities") {
@@ -74,8 +73,21 @@ const checkout = (event) => {
 };
 budgetUpdate.addEventListener("click", (e) => {
   e.preventDefault();
-  nameInput = document.querySelector(".name-input");
-  amountInput = document.querySelector(".amount-input");
+  //nameInput = document.querySelector(".name-input");
+
+  //filter out the hidden inputs
+  nameInput = [...document.querySelectorAll(".name-input")].filter(function (
+    input
+  ) {
+    return ![...input.parentElement.classList].includes("hidden");
+  })[0];
+
+  //amountInput = document.querySelector(".amount-input");
+  amountInput = [...document.querySelectorAll(".amount-input")].filter(
+    function (input) {
+      return ![...input.parentElement.classList].includes("hidden");
+    }
+  )[0];
   console.log({ nameInput });
   let expense = {
     name: nameInput.value,
