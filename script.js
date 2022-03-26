@@ -89,6 +89,9 @@ budgetUpdate.addEventListener("click", (e) => {
     return ![...input.parentElement.classList].includes("hidden");
   })[0];
 
+  //validate text input
+  allLetters(nameInput);
+
   //amountInput = document.querySelector(".amount-input");
   amountInput = [...document.querySelectorAll(".amount-input")].filter(
     function (input) {
@@ -126,7 +129,13 @@ const updateBalance = () => {
     document.querySelector(".alert").style.fontSize = "28px";
 
     document.querySelector(".alert").textContent = `Alert:  Insufficient Funds`;
-    // document.querySelector("#pid").style.display = "none";
+    //to disable "mouse click"
+    //document.querySelector("#id").style.pointEvents = "none";
+
+    budgetUpdate.style.pointerEvents = "none";
+    //to re-enable "click"
+    //document.querySelector("#id"),style.pointerEvents ="auto";
+    //
   } else {
     remainingBalance.classList.remove("red");
     remainingBalance.classList.add("green");
@@ -211,3 +220,24 @@ budgetUpdate.addEventListener("click", (e) => {
   }
   console.log("update");
 });
+
+//validation for letters
+function allLetters(nameInput) {
+  let letters = /^[A-Za-z]+$/;
+  if (nameInput.value.match(letters)) {
+    return true;
+  } else {
+    alert("Please insert alphabets only");
+    return false;
+  }
+}
+
+// function allnumeric() {
+//   let numbers = /^[0-9]+$/;
+//   if (amountInput.value.match(numbers)) {
+//     return true;
+//   } else {
+//     alert("please insert numbers only");
+//     return false;
+//   }
+// }
