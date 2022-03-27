@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
   console.log(e.target);
   weeklyInput = budgetInput.value;
 
-  weeklyBudget.textContent = `Budget Amount: ${weeklyInput}`;
+  weeklyBudget.textContent = `Budget Amount: $${weeklyInput}`;
   weekInpt.reset();
   updateBalance();
 });
