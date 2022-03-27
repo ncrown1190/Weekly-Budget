@@ -101,6 +101,7 @@ li {
   display: flex;
   align-items: baseline;
   border-bottom: 1px solid #3700b3;
+  text-align: center;
   /* flex: 1; */
 }
 .category-list a {
