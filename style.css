@@ -114,7 +114,7 @@ li {
   display: flex;
   /* justify-content: center;
     align-items: center; */
-  flex: 2;
+  flex: 1;
 }
 /* .category-list .highlighted-cat {
     border: 3px solid #70946f;
@@ -130,7 +130,7 @@ li {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
-  filter: hue-rotate(546deg);
+  filter: grayscale(1);
   flex: 1;
 }
 .img-div {
@@ -142,30 +142,36 @@ li {
   width: 50%;
   height: 50%;
   background-image: url("assets/img/entertainment1.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   align-items: center;
+  opacity: 0.79;
 }
 .img-div2 {
   background-image: url("assets/img/food1.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   align-items: center;
 }
 .img-div3 {
   background-image: url("assets/img/clothing4.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   align-items: baseline;
 }
 .img-div4 {
   background-image: url("assets/img/bill1.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   align-items: center;
 }
 .img-div5 {
   background-image: url("assets/img/prr.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   align-items: center;
@@ -197,6 +203,8 @@ li {
   padding: 2px;
   margin: 6px;
   width: 80%;
+  border: 1px solid #bb86fc;
+  padding: 5px;
 }
 .middle-section {
   padding: 5px 10px;
