@@ -241,23 +241,27 @@ p.remaining-balance {
   flex-direction: column;
   align-items: center;
 }
-.budget-Update-btn {
-  padding: 5px 30px;
-  margin: 10px;
+#budget-Update-btn {
+  background-color: #bb86fc;
+  color: white;
+  padding: 10px 30px;
+  margin: 5px;
   border-radius: 5px;
-  position: fixed;
   bottom: 80px;
+  border-radius: 10px;
 }
 .cancel-btn {
   background-color: #6200ee;
+  border-style: none;
   color: white;
-  padding: 5px 30px;
-  margin: 5px;
-  border-radius: 5px;
-  position: fixed;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 10px;
   bottom: 40px;
-  left: 40%;
+  left: 50%;
   align-items: center;
+  padding-right: 57px;
+  padding-left: 57px;
 }
 .cat-btn {
   display: none;
@@ -311,10 +315,10 @@ footer p {
     position: fixed;
     background-color: #6200ee;
     color: white;
-    padding: 5px 30px;
-    border-radius: 5px;
-    bottom: 40px;
-    margin-left: 78px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    bottom: 60px;
+    margin-left: 10px;
   }
 
   h6 {
