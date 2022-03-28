@@ -22,10 +22,11 @@ Body {
 
 /* SPECIFICS */
 header {
-  position: fixed;
+  position: absolute;
   /* font-family: abril fatface; */
   font-size: 20px;
   top: 0;
+  margin-top: auto;
   right: 0;
   left: 0;
   padding: 20px 30px;
