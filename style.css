@@ -118,12 +118,6 @@ li {
     align-items: center; */
   flex: 1;
 }
-/* .category-list .highlighted-cat {
-    border: 3px solid #70946f;
-    color: #70946f;
-    font-weight: bold;
-    background-color: #ebf4e5;
-  } */
 .category-list div {
   padding: 5px;
   width: 50px;
@@ -317,17 +311,100 @@ footer p {
     color: white;
     padding: 10px 30px;
     border-radius: 10px;
-    bottom: 60px;
+    bottom: 40px;
+    left: 125px;
     margin-left: 10px;
   }
-
+  .category-selection {
+    padding: 5px 10px;
+    height: 200px;
+    /* width: 48%;
+  float: left;
+  flex: 4; */
+    width: 100%;
+  }
+  .category-selection ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  li.category-list {
+    height: 150px;
+  }
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #3700b3;
+    text-align: center;
+    /* flex: 1; */
+  }
+  /* #event-List {
+    height: 100px;
+  } */
   h6 {
     display: flex;
     justify-content: left;
   }
 
-  .category-selection {
-    margin-left: 50px;
-    width: 30%;
+  .img-div {
+    width: 500px;
+    height: 500px;
+    align-items: center;
+  }
+  .view2 img {
+    padding: 6px;
+    width: 3%;
+    height: 3%;
+  }
+  #budget-Update-btn {
+    margin-left: 1070px;
+    margin-bottom: 40px;
+  }
+  .view2 input {
+    padding: 2px;
+    margin: 6px;
+    width: 20%;
+    border: 1px solid #bb86fc;
+    padding: 5px;
+  }
+  .end-section {
+    /* padding: 5px 10px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  p.remaining {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 20px;
+    /* padding-bottom: 10px; */
+  }
+  .items-container p {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #efd2ea; */
+  }
+  .listItems p {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .expenses {
+    top: 50px;
+    width: 250px;
+    font-size: 20px;
+    color: red;
   }
 }

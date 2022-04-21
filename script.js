@@ -125,7 +125,7 @@ const updateBalance = () => {
     document.querySelector(".alert").style.display = "block";
     document.querySelector(".alert").style.color = "red";
     document.querySelector(".alert").style.marginTop = "15px";
-    document.querySelector(".alert").style.marginLeft = "60px";
+    document.querySelector(".alert").style.marginLeft = "35%";
     document.querySelector(".alert").style.fontSize = "28px";
 
     document.querySelector(".alert").textContent = `Alert:  Insufficient Funds`;
